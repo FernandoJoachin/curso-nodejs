@@ -31,7 +31,7 @@ console.log(john); */
 
 
 /**ARCHIVO 06 */
-const { getPokemonById } = require('./js-foundation/06-promises');
+import { getPokemonById } from "./js-foundation/06-promises";
 
 getPokemonById(780)
     .then(pokemon => console.log({ pokemon }))
@@ -109,7 +109,7 @@ getPokemonById(254)
     .then(pokemon => console.log({ pokemon }))
     .catch(err => console.log(err))
 
-const { buildLogger } = require('./plugins');
+import { buildLogger } from "./plugins/logger.plugin";
 const logger = buildLogger('app.js');
 logger.log('Hola mundo');
-logger.error('Opps. Algo salió mal');
+logger.error('Opps. Algo salió mal'); 
