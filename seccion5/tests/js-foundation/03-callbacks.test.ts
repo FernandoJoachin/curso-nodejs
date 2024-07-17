@@ -25,9 +25,4 @@ describe('js-foundation/03-callbacks.ts', () => {
           done();
         });
     }});
-
-    test('first character should be Flash and second Superman', () => {{
-        
-
-    }});
 });

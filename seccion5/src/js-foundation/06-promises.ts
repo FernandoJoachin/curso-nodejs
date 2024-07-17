@@ -15,13 +15,16 @@ interface Pokemon {
 }
 
 export const getPokemonById = async (id : string | number) : Promise<Pokemon> => {
+  try {
     const url = `https://pokeapi.co/api/v2/pokemon/${ id }`;
-
-  const pokemon = await httpClient.get(url);
-
-  return {
-    id: pokemon.id,
-    name: pokemon.name,
-    types: pokemon.types.map((typeInfo : PokemonTypes) => typeInfo.type.name).join(', ')
-  };
+    const pokemon = await httpClient.get(url);
+  
+    return {
+      id: pokemon.id,
+      name: pokemon.name,
+      types: pokemon.types.map((typeInfo : PokemonTypes) => typeInfo.type.name).join(', ')
+    };
+  } catch (error) {
+    throw `Pokemon not found with id ${ id }`;
+  }
 }
