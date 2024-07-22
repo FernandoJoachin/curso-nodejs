@@ -3,3 +3,5 @@ node_modules/
 custom-outputs/
 coverage/
 test-destination/
+logs/
+.env
