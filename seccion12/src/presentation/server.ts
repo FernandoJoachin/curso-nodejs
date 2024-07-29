@@ -34,7 +34,7 @@ export class Server {
     public static start(){
         console.log('Server started...');
 
-        /* new SendEmailLogs(emailService, FileSystemLogRepositroy).execute('fernando.joachin.prieto@loopcrack.com'); */
+        new SendEmailLogs(emailService, fsLogRepository).execute('fernando.joachin.prieto@loopcrack.com');
 
 /*         emailService.sendEmail({
             to: 'fernando.joachin.prieto@loopcrack.com',
@@ -47,7 +47,7 @@ export class Server {
             `,
         }) */
 
-        /* emailService.sendEmailWithFileSystemLogs('fernando.joachin.prieto@loopcrack.com') */
+        //emailService.sendEmailWithFileSystemLogs('fernando.joachin.prieto@loopcrack.com');
 
 
         //CronService.createJob(

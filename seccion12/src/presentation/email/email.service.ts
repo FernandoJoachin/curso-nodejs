@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 import { envs } from '../../config/plugins/envs.plugin';
 
-interface SendMailOptions {
+export interface SendMailOptions {
     to : string | string[];
     subject : string;
     htmlBody : string;
@@ -35,10 +35,11 @@ export class EmailService {
                 attachments
             });
 
-            console.log(sentInformation);
+            console.log(sentInformation, 'hola');
             return true;
         } catch (error) {
             console.log(error);
+            console.log('aqui');
             return false;
         }
     }
