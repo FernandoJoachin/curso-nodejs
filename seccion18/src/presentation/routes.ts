@@ -12,7 +12,7 @@ export class AppRoutes {
     const router = Router();
     
     // Definir las rutas
-    router.use('/api/todos', AuthRoutes.routes);
+    router.use('/api/auth', AuthRoutes.routes);
 
 
 
