@@ -5,7 +5,7 @@ import { UserModel } from '../../data';
 import { UserEntity } from '../../domain';
 
 export class AuthMiddleware {
-    public static async validateJWT(req: Request, res: Response, next: NextFunction){
+    public static async validateJWT(req : Request, res : Response, next : NextFunction){
         const authorization = req.header('Authorization');
         if(!authorization) return res.status(401).json({ error: 'No token provided' });
         if(!authorization.startsWith('Bearer ')) return res.status(401).json({ error: 'Invalid Bearer token' });
@@ -13,7 +13,7 @@ export class AuthMiddleware {
         const token = authorization.split(' ').at(1) || '';
 
         try {
-            const payload = await JwtAdapter.validateToken<{ id: string }>(token);
+            const payload = await JwtAdapter.validateToken<{ id : string }>(token);
             if(!payload) return res.status(401).json({ error: 'Invalid token' });
 
             const user = await UserModel.findById(payload.id);
