@@ -10,3 +10,5 @@ postgresDB/
 mongo-test/
 postgres-test/
 keys/
+# Local Netlify folder
+.netlify
