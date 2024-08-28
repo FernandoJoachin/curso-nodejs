@@ -18,12 +18,23 @@ export class WssService {
     }
 
     public static get instance() : WssService {
-      
+        if(!WssService._instance){
+            throw 'WssService is not initialized';
+        }
+
         return WssService._instance;
     }
 
     public static initWss(options : Options){
         WssService._instance = new WssService(options);
+    }
+
+    public sendMessage(type : string, payload : Object){
+        this.wss.clients.forEach(client => {
+            if(client.readyState === WebSocket.OPEN){
+                client.send(JSON.stringify({ type, payload }));
+            }
+        });
     }
 
     public start(){
