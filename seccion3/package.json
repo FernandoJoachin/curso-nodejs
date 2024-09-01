@@ -1,0 +1,23 @@
+{
+  "name": "seccion3",
+  "version": "1.0.0",
+  "description": "Mi primer aplicación real de NodeJS del curso",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js",
+    "start:dev": "echo 'Hola mundo desde dev",
+    "dev": "nodemon src/app.js"
+  },
+  "author": "Fernando Joachín",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "get-age": "^1.0.1",
+    "uuid": "^10.0.0",
+    "winston": "^3.13.1"
+  }
+}

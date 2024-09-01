@@ -1,0 +1,14 @@
+node_modules/
+*.log
+custom-outputs/
+coverage/
+test-destination/
+logs/
+.env
+mongoDB/
+postgresDB/
+mongo-test/
+postgres-test/
+keys/
+# Local Netlify folder
+.netlify
